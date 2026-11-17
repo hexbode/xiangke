@@ -12,6 +12,7 @@ import {
   PPT_LEVEL_OPTIONS,
   VOLUME_OPTIONS,
 } from "@/lib/pptEngine";
+import { generateDeckViaServer } from "@/lib/ppt";
 import { SUGGESTIONS } from "@/lib/suggestions";
 import type { LessonSuggestion } from "@/lib/suggestions";
 import { useStore } from "@/lib/store";
@@ -32,6 +33,7 @@ const GEN_STEPS = [
   "分配环节时间：加总等于课时",
   "写每页字段：活动、提问、结论、备注",
   "自检课时、容量与答案",
+  "调用 DeepSeek 编排课件结构",
 ];
 
 const delay = (ms: number) => new Promise((resolve) => window.setTimeout(resolve, ms));
@@ -140,17 +142,33 @@ export function CoursewarePage() {
       level,
       aids,
     };
-    const next = generatePptDeck({
-      meta,
-      author: state.teacher.name,
-      school: state.teacher.school,
-      brief,
-    });
+    let next: PptDeck | null = null;
+    let usedAi = false;
+    try {
+      next = await generateDeckViaServer({
+        meta,
+        brief,
+        author: state.teacher.name,
+        school: state.teacher.school,
+      });
+      usedAi = true;
+    } catch (error) {
+      console.warn("DeepSeek 生成不可用，回退本地规则", error);
+      next = generatePptDeck({
+        meta,
+        author: state.teacher.name,
+        school: state.teacher.school,
+        brief,
+      });
+    } finally {
+      setGenerating(false);
+    }
+    if (!next) return;
     setDeck(next);
-    setGenerating(false);
     const passed = next.checks?.filter((item) => item.ok).length ?? 0;
     const totalChecks = next.checks?.length ?? 0;
-    toast(`课件已生成：${next.slides.length} 页 · 自检 ${passed}/${totalChecks} 项通过`);
+    const prefix = usedAi ? "DeepSeek 已生成课件" : "外部接口不可用，已用本地规则生成";
+    toast(`${prefix}：${next.slides.length} 页 · 自检 ${passed}/${totalChecks} 项通过`);
     window.setTimeout(() => {
       deckRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 80);

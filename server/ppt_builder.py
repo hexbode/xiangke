@@ -2576,11 +2576,25 @@ def _scene_tree(slide, cx: float, ground_y: float, autumn: bool) -> None:
         radius=0.3,
     )
     top = ground_y - trunk_h
+    # 两根伸向树冠外的枝干，让树不只是一个圆球
+    for direction in (-1, 1):
+        branch = _add_shape(
+            slide,
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            x=cx - 0.015,
+            y=top + 0.12,
+            w=0.03,
+            h=0.34,
+            fill="gold_pale",
+            radius=0.4,
+        )
+        branch.rotation = direction * 38
     canopy = ("orange", "gold", "red") if autumn else ("green", "green_mid", "green")
     for dx, dy, size, color in (
-        (-0.24, -0.02, 0.36, canopy[1]),
-        (0.0, -0.18, 0.46, canopy[0]),
-        (0.24, -0.01, 0.34, canopy[2]),
+        (-0.24, 0.0, 0.34, canopy[1]),
+        (-0.06, -0.18, 0.44, canopy[0]),
+        (0.2, -0.08, 0.36, canopy[2]),
+        (0.1, 0.04, 0.3, canopy[0]),
     ):
         _add_shape(
             slide,
@@ -2591,6 +2605,18 @@ def _scene_tree(slide, cx: float, ground_y: float, autumn: bool) -> None:
             h=size,
             fill=color,
         )
+    if autumn:
+        # 枝头的果子，给秋树一点焦点
+        for dx, dy, color in ((-0.12, 0.14, "red"), (0.06, -0.02, "orange"), (0.24, 0.12, "red")):
+            _add_shape(
+                slide,
+                MSO_SHAPE.OVAL,
+                x=cx + dx,
+                y=top + dy,
+                w=0.05,
+                h=0.05,
+                fill=color,
+            )
 
 
 def _scene_house(slide, x: float, ground_y: float) -> None:
@@ -2617,6 +2643,17 @@ def _scene_house(slide, x: float, ground_y: float) -> None:
         line_width=0.75,
         radius=0.05,
     )
+    # 烟囱在屋顶之后画，只露出上半截
+    _add_shape(
+        slide,
+        MSO_SHAPE.ROUNDED_RECTANGLE,
+        x=x + body_w - 0.2,
+        y=ground_y - body_h - 0.38,
+        w=0.07,
+        h=0.2,
+        fill="terracotta",
+        radius=0.2,
+    )
     _add_shape(
         slide,
         MSO_SHAPE.ISOSCELES_TRIANGLE,
@@ -2626,6 +2663,17 @@ def _scene_house(slide, x: float, ground_y: float) -> None:
         h=0.27,
         fill="terracotta",
     )
+    # 三团炊烟
+    for dx, dy, size in ((0.02, -0.06, 0.05), (0.06, -0.13, 0.07), (0.03, -0.21, 0.09)):
+        _add_shape(
+            slide,
+            MSO_SHAPE.OVAL,
+            x=x + body_w - 0.2 + dx,
+            y=ground_y - body_h - 0.38 + dy,
+            w=size,
+            h=size,
+            fill="white_soft",
+        )
     _add_shape(
         slide,
         MSO_SHAPE.ROUNDED_RECTANGLE,
@@ -2638,6 +2686,15 @@ def _scene_house(slide, x: float, ground_y: float) -> None:
     )
     _add_shape(
         slide,
+        MSO_SHAPE.OVAL,
+        x=x + 0.145,
+        y=ground_y - 0.12,
+        w=0.02,
+        h=0.02,
+        fill="gold",
+    )
+    _add_shape(
+        slide,
         MSO_SHAPE.ROUNDED_RECTANGLE,
         x=x + 0.33,
         y=ground_y - 0.22,
@@ -2646,6 +2703,29 @@ def _scene_house(slide, x: float, ground_y: float) -> None:
         fill="gold",
         radius=0.1,
     )
+    # 右侧小栅栏
+    for offset in (body_w + 0.06, body_w + 0.14, body_w + 0.22):
+        _add_shape(
+            slide,
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            x=x + offset,
+            y=ground_y - 0.13,
+            w=0.016,
+            h=0.13,
+            fill="gold_pale",
+            radius=0.4,
+        )
+    for offset_y in (0.05, 0.1):
+        _add_shape(
+            slide,
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            x=x + body_w + 0.04,
+            y=ground_y - offset_y,
+            w=0.24,
+            h=0.016,
+            fill="gold_pale",
+            radius=0.5,
+        )
 
 
 def _scene_flowers(slide, x: float, ground_y: float) -> None:
@@ -2708,6 +2788,86 @@ def _scene_birds(slide, x: float, y: float) -> None:
             )
             connector.line.color.rgb = _rgb("ink_soft")
             connector.line.width = Pt(1.2)
+
+
+def _scene_treeline(slide, x: float, w: float, ground_y: float) -> None:
+    """远景小树，高低错落成一排树丛，拉开画面纵深。"""
+    for offset, scale, color in (
+        (0.58, 0.9, "green_mist"),
+        (0.645, 0.7, "soft"),
+        (0.7, 1.0, "green_mist"),
+        (0.755, 0.78, "soft"),
+        (0.81, 0.9, "green_mist"),
+    ):
+        tree_x = x + w * offset
+        trunk_h = 0.14 * scale
+        canopy = 0.26 * scale
+        _add_shape(
+            slide,
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            x=tree_x - 0.008,
+            y=ground_y - trunk_h,
+            w=0.016,
+            h=trunk_h,
+            fill="gold_pale",
+            radius=0.4,
+        )
+        _add_shape(
+            slide,
+            MSO_SHAPE.OVAL,
+            x=tree_x - canopy / 2,
+            y=ground_y - trunk_h - canopy * 0.82,
+            w=canopy,
+            h=canopy,
+            fill=color,
+        )
+
+
+def _scene_snow_tree(slide, cx: float, ground_y: float) -> None:
+    """雪松：三层树冠叠出冬季轮廓，顶部压一层雪。"""
+    _add_shape(
+        slide,
+        MSO_SHAPE.OVAL,
+        x=cx - 0.24,
+        y=ground_y - 0.05,
+        w=0.48,
+        h=0.1,
+        fill="blue_mist",
+    )
+    _add_shape(
+        slide,
+        MSO_SHAPE.ROUNDED_RECTANGLE,
+        x=cx - 0.04,
+        y=ground_y - 0.14,
+        w=0.08,
+        h=0.14,
+        fill="gold_pale",
+        radius=0.3,
+    )
+    for width, height, base_offset, color in (
+        (0.44, 0.3, 0.12, "green_mid"),
+        (0.34, 0.26, 0.3, "green"),
+        (0.24, 0.22, 0.48, "green_mid"),
+    ):
+        _add_shape(
+            slide,
+            MSO_SHAPE.ISOSCELES_TRIANGLE,
+            x=cx - width / 2,
+            y=ground_y - base_offset - height,
+            w=width,
+            h=height,
+            fill=color,
+        )
+        cap_w, cap_h = width * 0.42, height * 0.34
+        _add_shape(
+            slide,
+            MSO_SHAPE.ISOSCELES_TRIANGLE,
+            x=cx - cap_w / 2,
+            y=ground_y - base_offset - height,
+            w=cap_w,
+            h=cap_h,
+            fill="white_soft",
+        )
 
 
 def _scene_snowman(slide, cx: float, ground_y: float) -> None:
@@ -2837,8 +2997,8 @@ def _render_scene_diagram(
     # 远山与丘陵
     if flags.get("mountain"):
         _scene_mountains(slide, x + w * 0.5, ground_y, snow=bool(flags.get("snow")))
-    elif any(
-        flags.get(key) for key in ("tree", "flower", "river", "rain", "autumn", "snow", "moon", "sun", "bird")
+    elif not flags.get("snow") and any(
+        flags.get(key) for key in ("tree", "flower", "river", "rain", "autumn", "moon", "sun", "bird")
     ):
         for offset, cw, ch, color in (
             (0.3, 0.42, 0.26, "green_mist"),
@@ -2854,7 +3014,11 @@ def _render_scene_diagram(
                 fill=color,
             )
 
-    # 地面：圆角色带 + 浅色地平线
+    # 远景小树，把画面从「一块地」拉出纵深
+    if any(flags.get(key) for key in ("tree", "autumn", "flower", "house", "river")):
+        _scene_treeline(slide, x, w, ground_y)
+
+    # 地面：圆角色带 + 浅色地平线；雪天整片换成雪地
     _add_shape(
         slide,
         MSO_SHAPE.ROUNDED_RECTANGLE,
@@ -2862,7 +3026,7 @@ def _render_scene_diagram(
         y=ground_y,
         w=w - 0.06,
         h=h * 0.22,
-        fill="soft",
+        fill="white_soft" if flags.get("snow") else "soft",
         radius=0.06,
     )
     _add_shape(
@@ -2872,7 +3036,7 @@ def _render_scene_diagram(
         y=ground_y,
         w=w - 0.06,
         h=0.05,
-        fill="green_mist",
+        fill="blue_mist" if flags.get("snow") else "green_mist",
         radius=0.5,
     )
 
@@ -2899,31 +3063,63 @@ def _render_scene_diagram(
                 fill="white_soft",
                 radius=0.5,
             )
-
-    # 近处灌木与草丛
-    for offset in (0.36, 0.9):
-        _add_shape(
-            slide,
-            MSO_SHAPE.OVAL,
-            x=x + w * offset,
-            y=ground_y - 0.14,
-            w=0.24,
-            h=0.14,
-            fill="green",
-        )
-    for offset in (0.34, 0.46, 0.58, 0.7, 0.82, 0.94):
-        for dx, angle in ((-0.028, -16), (0.0, 0), (0.028, 16)):
-            blade = _add_shape(
+        # 荷叶与右岸芦苇
+        for pad_x, pad_w, pad_y in ((0.22, 0.14, 0.1), (0.66, 0.12, 0.12)):
+            _add_shape(
+                slide,
+                MSO_SHAPE.OVAL,
+                x=x + w * pad_x,
+                y=ground_y + h * pad_y,
+                w=pad_w,
+                h=0.055,
+                fill="green_mid",
+            )
+        for dx, reeds_h in ((0.0, 0.22), (0.035, 0.28), (0.07, 0.2)):
+            _add_shape(
                 slide,
                 MSO_SHAPE.ROUNDED_RECTANGLE,
-                x=x + w * offset + dx,
-                y=ground_y - 0.07,
-                w=0.014,
-                h=0.075,
+                x=x + w * 0.92 + dx,
+                y=ground_y - reeds_h,
+                w=0.012,
+                h=reeds_h,
                 fill="green",
                 radius=0.5,
             )
-            blade.rotation = angle
+            _add_shape(
+                slide,
+                MSO_SHAPE.OVAL,
+                x=x + w * 0.92 + dx - 0.012,
+                y=ground_y - reeds_h - 0.035,
+                w=0.036,
+                h=0.055,
+                fill="gold_mist",
+            )
+
+    # 近处灌木与草丛；雪天不画，保持雪地干净
+    if not flags.get("snow"):
+        for offset in (0.36, 0.9):
+            _add_shape(
+                slide,
+                MSO_SHAPE.OVAL,
+                x=x + w * offset,
+                y=ground_y - 0.14,
+                w=0.24,
+                h=0.14,
+                fill="green",
+            )
+        for offset in (0.34, 0.46, 0.58, 0.7, 0.82, 0.94):
+            for dx, angle in ((-0.028, -16), (0.0, 0), (0.028, 16)):
+                blade = _add_shape(
+                    slide,
+                    MSO_SHAPE.ROUNDED_RECTANGLE,
+                    x=x + w * offset + dx,
+                    y=ground_y - 0.07,
+                    w=0.014,
+                    h=0.075,
+                    fill="green",
+                    radius=0.5,
+                )
+                blade.rotation = angle
 
     # 房屋、树、花
     if flags.get("house"):
@@ -2932,7 +3128,7 @@ def _render_scene_diagram(
         tree_x = x + w * (0.74 if flags.get("house") else 0.68)
         _scene_tree(slide, tree_x, ground_y, bool(flags.get("autumn")))
     if flags.get("flower"):
-        flower_x = x + w * (0.6 if flags.get("house") else 0.5)
+        flower_x = x + w * (0.62 if flags.get("house") else 0.5)
         _scene_flowers(slide, flower_x, ground_y)
     if flags.get("snow"):
         # 地面雪堆，增加冬天的层次
@@ -2945,6 +3141,21 @@ def _render_scene_diagram(
                 w=mound_w,
                 h=mound_h,
                 fill="white_soft",
+                line="blue_mist",
+                line_width=0.6,
+            )
+        if not (flags.get("tree") or flags.get("autumn")):
+            _scene_snow_tree(slide, x + w * 0.8, ground_y)
+        # 雪地脚印，从画面左侧走向雪人
+        for index in range(5):
+            _add_shape(
+                slide,
+                MSO_SHAPE.OVAL,
+                x=x + w * (0.4 + index * 0.026),
+                y=ground_y - 0.025 + (0.012 if index % 2 else 0),
+                w=0.032,
+                h=0.018,
+                fill="blue_mist",
             )
         _scene_snowman(slide, x + w * 0.52, ground_y)
 

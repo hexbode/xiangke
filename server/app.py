@@ -20,9 +20,11 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, quote, urlparse
 
 try:  # 兼容 python server/app.py 与 python -m server.app
+    from . import ai_deck
     from .ppt_builder import build_pptx, template_available
     from .oer import ASSET_DIR, hot_resources, pick_diagram, search_resources
 except ImportError:
+    import ai_deck
     from ppt_builder import build_pptx, template_available
     from oer import ASSET_DIR, hot_resources, pick_diagram, search_resources
 
@@ -82,6 +84,7 @@ class PptHandler(BaseHTTPRequestHandler):
                     "endpoints": {
                         "/api/ppt/health": "GET",
                         "/api/ppt/export": "POST { deck, fileName }",
+                        "/api/ppt/generate": "POST { meta, brief, author, school }（DeepSeek）",
                         "/api/oer/health": "GET",
                         "/api/oer/hot": "GET ?limit=8",
                         "/api/oer/search": "GET ?q=分数&limit=8",
@@ -188,11 +191,92 @@ class PptHandler(BaseHTTPRequestHandler):
             return
         self._send_json(
             HTTPStatus.OK,
-            {"ok": True, "engine": "python-pptx", "template": template_available()},
+            {
+                "ok": True,
+                "engine": "python-pptx",
+                "template": template_available(),
+                "ai": ai_deck.available(),
+                "ai_model": ai_deck.model_name(),
+            },
+        )
+
+    def _handle_generate(self) -> None:
+        """调用 DeepSeek 生成课件结构，返回前端可直接预览的 deck JSON。"""
+        try:
+            length = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            length = 0
+        if length <= 0:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"ok": False, "error": "empty_body"})
+            return
+        if length > MAX_BODY:
+            self._send_json(
+                HTTPStatus.REQUEST_ENTITY_TOO_LARGE,
+                {"ok": False, "error": "body_too_large"},
+            )
+            return
+        try:
+            payload = json.loads(self.rfile.read(length).decode("utf-8"))
+        except (ValueError, UnicodeDecodeError):
+            self._send_json(HTTPStatus.BAD_REQUEST, {"ok": False, "error": "invalid_json"})
+            return
+        if not isinstance(payload, dict):
+            self._send_json(HTTPStatus.BAD_REQUEST, {"ok": False, "error": "invalid_body"})
+            return
+
+        meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
+        brief = payload.get("brief") if isinstance(payload.get("brief"), dict) else {}
+        if not str(meta.get("lesson") or "").strip():
+            self._send_json(HTTPStatus.BAD_REQUEST, {"ok": False, "error": "missing_lesson"})
+            return
+        if not ai_deck.available():
+            self._send_json(
+                HTTPStatus.SERVICE_UNAVAILABLE,
+                {
+                    "ok": False,
+                    "error": "ai_not_configured",
+                    "hint": "设置环境变量 DEEPSEEK_API_KEY 后重启 PPT 服务",
+                },
+            )
+            return
+
+        try:
+            deck = ai_deck.generate_deck(
+                meta=meta,
+                brief=brief,
+                author=str(payload.get("author") or ""),
+                school=str(payload.get("school") or ""),
+            )
+        except ai_deck.AiDeckError as error:
+            self._send_json(
+                HTTPStatus.BAD_GATEWAY,
+                {"ok": False, "error": "ai_failed", "message": str(error)},
+            )
+            return
+        except Exception:  # noqa: BLE001 - 未预期异常打印堆栈，便于排查
+            traceback.print_exc()
+            self._send_json(
+                HTTPStatus.INTERNAL_SERVER_ERROR,
+                {"ok": False, "error": "generate_failed"},
+            )
+            return
+
+        self._send_json(
+            HTTPStatus.OK,
+            {
+                "ok": True,
+                "source": "deepseek",
+                "model": ai_deck.model_name(),
+                "deck": deck,
+            },
         )
 
     def do_POST(self) -> None:  # noqa: N802
-        if self.path.split("?")[0] != "/api/ppt/export":
+        path = self.path.split("?")[0]
+        if path == "/api/ppt/generate":
+            self._handle_generate()
+            return
+        if path != "/api/ppt/export":
             self._send_json(
                 HTTPStatus.NOT_FOUND,
                 {

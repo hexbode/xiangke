@@ -1,8 +1,6 @@
 # 乡课 · 教师 AI 备课与全国教研共享
 
-> 2026 Qoder 高校创造力大赛 · Hack4Good 技术向善赛道 · 教育与乡村
->
-> 用 Qoder 开发并部署到 Qoder Sites 的移动端 Web 应用，模拟微信小程序教师端的完整链路。
+> 面向乡村教师的移动端 Web 应用，模拟微信小程序教师端的完整链路。
 >
 > **在线体验**：https://xiangke-twfryk5inyt.qoder.zone
 
@@ -69,15 +67,31 @@
 
 ## 6. 技术与数据说明
 
-- **栈**：React 19 + TypeScript + Vite + Tailwind CSS（Qoder Sites React starter），静态构建输出到 `dist/`。
+- **栈**：React 19 + TypeScript + Vite + Tailwind CSS，静态构建输出到 `dist/`。
 - **路由**：Hash 路由，天然适配静态托管。
 - **状态**：React Context + `localStorage`（键：`xiangke.state.v1`），刷新不丢数据。
 - **登录**：先在登录页选择「教师 / 教研员」身份，再填姓名 + 省份 + 县域，无密码；可勾选「记住登录信息」，下次登录自动填入姓名、身份与地区。县域覆盖 34 个省级行政区下约 3000 个县级行政区（区 / 县 / 县级市 / 旗），支持「其他」手动填写。身份登录后固定，需退出登录才能切换；全站只显示姓名与「省份 · 县域」，不展示学校名称。
-- **生成**：`src/lib/lessonContent.ts` 精编教案 + `src/lib/engine.ts` 乡村约束适配与学科模板，**不调用外部模型**。
+- **生成**：`src/lib/lessonContent.ts` 精编教案 + `src/lib/engine.ts` 乡村约束适配与学科模板，教案默认不调用外部模型；课件可选择调用 DeepSeek 生成课件结构，未配置或调用失败时自动回退本地规则。
 - **讲评**：`src/lib/scan.ts` 示例识别结果，上传图片只在本地预览、不写入存储。
 - **课件**：`src/pages/Courseware.tsx` 提供独立课件入口；`src/lib/pptEngine.ts` 是课时教学设计引擎，按教材 / 年级 / 册次 / 课题 / 课时 / 时长 / 课型 / 学情 / 教具生成一节课的教学流程（先定课时边界，再定核心活动、环节时间与每页固定字段，并自动自检）。导出 .pptx 时优先调用 `server/app.py`（python-pptx，基于模板或从零构建），服务不可用时自动回退到本地 `pptxgenjs`。
 - **外部资源**：`server/oer.py` 聚合开放资源，并优先使用 `server/data/oer_index.json` 本地预取索引，站内检索毫秒级返回。`npm run oer:crawl` 会通过百度图片（Bing 兜底）检索全网课堂素材，按标题关键词过滤后下载、压缩为 JPEG 存入 `server/assets/oer`；课件图解区的每一页会先解析该页「配图要求」里的图形、实物与动作词（如圆形、月饼、数轴、涂色、平均分），按「课题 + 年级 + 配图词」检索并排序，本地没有贴合素材时即时联网抓取一次并缓存，再按页面标题稳定轮换。网页全屏预览与导出的 PPTX 使用同一张图，讲者备注标注素材标题与来源站点。外部不可达时回退到内置图示（1/4 圆图、3/5 长条、10 的分成、数轴）。
 - **配图方案**：图解区按配图要求自动生成四类可直接使用的产物：树状图 / 逻辑关系输出 Mermaid 代码；几何图形与数量对应输出可运行的 python-pptx 代码；情境小动物、食物输出中英文 AI 绘画提示词；简单排版输出形状、颜色、尺寸、行列数等 PPT 操作参数。方案可在全屏预览中展开复制，并写入 PPT 讲者备注；几何图形与树状图会在导出的 PPTX 中直接绘制为原生形状。
+
+### 可选：接入 DeepSeek 生成课件
+
+课件页点击「生成」时，后端会先调用 `POST /api/ppt/generate`，由 DeepSeek 生成课件结构 JSON，再交给 python-pptx 渲染；未配置 Key、接口超时或返回内容不合法时，前端自动回退到本地规则生成，不影响使用。
+
+```bash
+# Windows PowerShell
+$env:DEEPSEEK_API_KEY = "sk-..."
+$env:DEEPSEEK_BASE_URL = "https://api.deepseek.com"   # 可选
+$env:DEEPSEEK_MODEL = "deepseek-chat"                 # 可选
+python server/app.py
+```
+
+- 健康检查 `GET /api/ppt/health` 中的 `ai` 字段表示是否已启用 DeepSeek。
+- API Key 只保存在后端环境变量中，不会下发到浏览器。
+- 未配置 Key 时 `/api/ppt/generate` 返回 503 `ai_not_configured`，前端直接走本地生成。
 - **数据**：初始不含演示数据；支持全国 34 个省级行政区与一至九年级，教案、课件、讲评与统计均来自本机使用，可在「我的 → 清空本机数据」清除。
 - **正式版路线**：微信小程序（原生）+ 云开发 / 云函数；大模型结构化输出、微信内容安全 `msgSecCheck`、图片姓名打码与 7 天自动删除。
 
@@ -110,10 +124,3 @@ src/
 - 作业图片正式版上传即裁切题目、姓名打码，7 天自动删除，不进公共库。
 - 教材版权：只引用目录结构，不复制教材正文。
 - 可持续：面向区域教育局与公益基金会，**不向教师收费**。
-
-## 10. 参赛信息
-
-- 赛事：2026 Qoder 高校创造力大赛
-- 赛道：Hack4Good 技术向善（教育与乡村）
-- 形态：Qoder Sites 公开访问的移动端 Web 应用（小程序形态）
-- 提交：报名与作品发布截止 2026-11-30 18:00

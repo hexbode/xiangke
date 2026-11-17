@@ -1,4 +1,4 @@
-import type { PptDeck } from "./types";
+import type { LessonMeta, PptBrief, PptDeck } from "./types";
 
 const COLORS = {
   paper: "F6F1E4",
@@ -46,6 +46,38 @@ async function requestServerPptx(deck: PptDeck, fileName: string): Promise<Blob>
     throw new Error("python-pptx 服务返回空文件");
   }
   return blob;
+}
+
+export interface DeckGenerateInput {
+  meta: LessonMeta;
+  brief: PptBrief;
+  author: string;
+  school: string;
+}
+
+/** 调用后端 DeepSeek 接口生成课件结构；失败时由调用方回退本地规则。 */
+export async function generateDeckViaServer(input: DeckGenerateInput): Promise<PptDeck> {
+  const response = await fetch("/api/ppt/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!response.ok) {
+    let detail = "";
+    try {
+      const data = (await response.json()) as { error?: string; message?: string };
+      detail = data.message || data.error || "";
+    } catch {
+      // 忽略非 JSON 错误体
+    }
+    throw new Error(detail || `课件生成服务返回 ${response.status}`);
+  }
+  const data = (await response.json()) as { deck?: PptDeck };
+  const deck = data.deck;
+  if (!deck || !Array.isArray(deck.slides) || deck.slides.length === 0) {
+    throw new Error("课件生成服务返回空内容");
+  }
+  return deck;
 }
 
 /** 优先调用服务端 python-pptx 生成；服务不可用时回退到本地 pptxgenjs。 */
