@@ -1,0 +1,1649 @@
+{
+  "generated_at": "2026-11-16",
+  "note": "网络预取索引：图解区优先使用本地缓存图片，检索无需等待。",
+  "items": [
+    {
+      "id": "builtin-fraction-circle",
+      "title": "1/4 圆图：四等分涂一份",
+      "thumbnail": "/api/oer/assets/fraction-circle.svg",
+      "url": "/api/oer/assets/fraction-circle.svg",
+      "license": "本站生成 · 可自由使用",
+      "creator": "乡课",
+      "source": "内置图示",
+      "keywords": [
+        "分数",
+        "1/4",
+        "四分之一",
+        "四等分",
+        "平均分",
+        "圆形",
+        "认识分数"
+      ]
+    },
+    {
+      "id": "builtin-fraction-bar",
+      "title": "3/5 长条图：五等分涂三份",
+      "thumbnail": "/api/oer/assets/fraction-bar.svg",
+      "url": "/api/oer/assets/fraction-bar.svg",
+      "license": "本站生成 · 可自由使用",
+      "creator": "乡课",
+      "source": "内置图示",
+      "keywords": [
+        "分数",
+        "3/5",
+        "五分之三",
+        "五等分",
+        "同分母",
+        "比较大小",
+        "长条图"
+      ]
+    },
+    {
+      "id": "builtin-ten-split",
+      "title": "10 的分成：6 个绿点 + 4 个红点",
+      "thumbnail": "/api/oer/assets/ten-split.svg",
+      "url": "/api/oer/assets/ten-split.svg",
+      "license": "本站生成 · 可自由使用",
+      "creator": "乡课",
+      "source": "内置图示",
+      "keywords": [
+        "10",
+        "分成",
+        "加法",
+        "6+4",
+        "进位加法",
+        "圆点图",
+        "一年级"
+      ]
+    },
+    {
+      "id": "builtin-number-line",
+      "title": "0–10 数轴示意图",
+      "thumbnail": "/api/oer/assets/number-line.svg",
+      "url": "/api/oer/assets/number-line.svg",
+      "license": "本站生成 · 可自由使用",
+      "creator": "乡课",
+      "source": "内置图示",
+      "keywords": [
+        "数轴",
+        "0-10",
+        "顺序",
+        "比大小",
+        "加减法",
+        "数学"
+      ]
+    },
+    {
+      "id": "web-003fbf8db7d9",
+      "title": "三年级上册数学《分数的初步认识》(电子版可打印)",
+      "thumbnail": "/api/oer/assets/web-003fbf8db7d9.jpg",
+      "url": "https://news.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "news.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数",
+        "图解"
+      ],
+      "width": 500,
+      "height": 647
+    },
+    {
+      "id": "web-fd8c7dc446ab",
+      "title": "分数知识点总结",
+      "thumbnail": "/api/oer/assets/web-fd8c7dc446ab.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数",
+        "图解"
+      ],
+      "width": 500,
+      "height": 653
+    },
+    {
+      "id": "web-86a0c3b987da",
+      "title": "📜 分数的起源与演变之旅 🚀",
+      "thumbnail": "/api/oer/assets/web-86a0c3b987da.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数",
+        "图解"
+      ],
+      "width": 1097,
+      "height": 800
+    },
+    {
+      "id": "web-69fe229ab4ea",
+      "title": "📊 资料分析中的分数记忆技巧 📈",
+      "thumbnail": "/api/oer/assets/web-69fe229ab4ea.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数",
+        "图解"
+      ],
+      "width": 552,
+      "height": 500
+    },
+    {
+      "id": "web-f5d09cf7dff1",
+      "title": "数轴怎么画",
+      "thumbnail": "/api/oer/assets/web-f5d09cf7dff1.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数",
+        "数轴"
+      ],
+      "width": 500,
+      "height": 668
+    },
+    {
+      "id": "web-8559fb3ca82d",
+      "title": "小数的认识,看图填上合适的小数,这是数轴的初步",
+      "thumbnail": "/api/oer/assets/web-8559fb3ca82d.jpg",
+      "url": "https://v.qq.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "v.qq.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数",
+        "数轴"
+      ],
+      "width": 471,
+      "height": 266
+    },
+    {
+      "id": "web-7533e0ff8f0e",
+      "title": "📊 数轴在数学中的重要性 🔍",
+      "thumbnail": "/api/oer/assets/web-7533e0ff8f0e.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数",
+        "数轴"
+      ],
+      "width": 1053,
+      "height": 500
+    },
+    {
+      "id": "web-0da57a235d81",
+      "title": "数轴二 - 知乎",
+      "thumbnail": "/api/oer/assets/web-0da57a235d81.jpg",
+      "url": "https://zhuanlan.zhihu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "zhuanlan.zhihu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数",
+        "数轴"
+      ],
+      "width": 881,
+      "height": 500
+    },
+    {
+      "id": "web-77656f715ee7",
+      "title": "小学数学几何图形总结",
+      "thumbnail": "/api/oer/assets/web-77656f715ee7.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "几何图形",
+        "小学"
+      ],
+      "width": 500,
+      "height": 658
+    },
+    {
+      "id": "web-a39bb19b4ee2",
+      "title": "小学数学几何图形公式大全!一篇搞定所有考点 宝妈宝爸看过来!冬瓜老",
+      "thumbnail": "/api/oer/assets/web-a39bb19b4ee2.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "几何图形",
+        "小学"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-9761266e9e20",
+      "title": "小学数学立体与平面图形全面解析:从奥秘到交融之美",
+      "thumbnail": "/api/oer/assets/web-9761266e9e20.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "几何图形",
+        "小学"
+      ],
+      "width": 692,
+      "height": 500
+    },
+    {
+      "id": "web-6bc79eeca73d",
+      "title": "小学立体几何,圆柱体圆台圆锥,动态演示图",
+      "thumbnail": "/api/oer/assets/web-6bc79eeca73d.jpg",
+      "url": "https://quanmin.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "quanmin.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "几何图形",
+        "小学"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-47542aab5698",
+      "title": "新版数学一年级思维导图|20以内的进位加法",
+      "thumbnail": "/api/oer/assets/web-47542aab5698.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "加法",
+        "数学",
+        "图示"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-6fe77203596a",
+      "title": "2026年幼小衔接数学20以内加减法之凑十法,破十法,平十法图解练习题",
+      "thumbnail": "/api/oer/assets/web-6fe77203596a.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "加法",
+        "数学",
+        "图示"
+      ],
+      "width": 707,
+      "height": 500
+    },
+    {
+      "id": "web-a9875bdf7143",
+      "title": "数学思维启蒙 #100以内的加法和减法 #一年级数学",
+      "thumbnail": "/api/oer/assets/web-a9875bdf7143.jpg",
+      "url": "https://www.xiaohongshu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.xiaohongshu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "加法",
+        "数学",
+        "图示"
+      ],
+      "width": 500,
+      "height": 630
+    },
+    {
+      "id": "web-a85f98be40dc",
+      "title": "「幼小衔接数学启蒙」掌握5以内减法,开发数学思维",
+      "thumbnail": "/api/oer/assets/web-a85f98be40dc.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "减法",
+        "数学",
+        "图示"
+      ],
+      "width": 500,
+      "height": 693
+    },
+    {
+      "id": "web-17c47bfd4e47",
+      "title": "10以内减法手抄报",
+      "thumbnail": "/api/oer/assets/web-17c47bfd4e47.jpg",
+      "url": "https://www.xiaohongshu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.xiaohongshu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "减法",
+        "数学",
+        "图示"
+      ],
+      "width": 708,
+      "height": 500
+    },
+    {
+      "id": "web-dd99400ea0b3",
+      "title": "亲自给孩子画几副数学4以内减法图片",
+      "thumbnail": "/api/oer/assets/web-dd99400ea0b3.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "减法",
+        "数学",
+        "图示"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-6f62884417bd",
+      "title": "孩子的 幼小衔接——10以内减法看图列算式,孩子的数学减法启蒙",
+      "thumbnail": "/api/oer/assets/web-6f62884417bd.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "减法",
+        "数学",
+        "图示"
+      ],
+      "width": 500,
+      "height": 623
+    },
+    {
+      "id": "web-5f524bc561ec",
+      "title": "九九乘法口诀表图 一一得一 一二得二 二二得四 一三得三 二三得六",
+      "thumbnail": "/api/oer/assets/web-5f524bc561ec.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "乘法口诀表"
+      ],
+      "width": 500,
+      "height": 668
+    },
+    {
+      "id": "web-c506dfa19c4b",
+      "title": "🔢乘法口诀表:轻松掌握乘法技巧!",
+      "thumbnail": "/api/oer/assets/web-c506dfa19c4b.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "乘法口诀表"
+      ],
+      "width": 500,
+      "height": 639
+    },
+    {
+      "id": "web-ca116b2f2e2e",
+      "title": "99乘法口诀表",
+      "thumbnail": "/api/oer/assets/web-ca116b2f2e2e.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "乘法口诀表"
+      ],
+      "width": 500,
+      "height": 668
+    },
+    {
+      "id": "web-686f271877e8",
+      "title": "小学生乘法口诀表 可打印",
+      "thumbnail": "/api/oer/assets/web-686f271877e8.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "乘法口诀表"
+      ],
+      "width": 714,
+      "height": 500
+    },
+    {
+      "id": "web-58370f0fa1c8",
+      "title": "四年级数学三位数除以两位数竖式计算练习",
+      "thumbnail": "/api/oer/assets/web-58370f0fa1c8.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "除法",
+        "竖式"
+      ],
+      "width": 500,
+      "height": 693
+    },
+    {
+      "id": "web-c543ca92968d",
+      "title": "四上每日一练,除法竖式计算2套练习",
+      "thumbnail": "/api/oer/assets/web-c543ca92968d.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "除法",
+        "竖式"
+      ],
+      "width": 500,
+      "height": 734
+    },
+    {
+      "id": "web-43a4ab46cd5b",
+      "title": "三年级除法总 \"翻车\"?抓准这 5 类竖式,孩子越练越稳",
+      "thumbnail": "/api/oer/assets/web-43a4ab46cd5b.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "除法",
+        "竖式"
+      ],
+      "width": 800,
+      "height": 1132
+    },
+    {
+      "id": "web-97efb8c1eb5e",
+      "title": "别再吼孩子做除法!3招让数学辅导变和谐,亲测有效!",
+      "thumbnail": "/api/oer/assets/web-97efb8c1eb5e.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "除法",
+        "竖式"
+      ],
+      "width": 800,
+      "height": 1037
+    },
+    {
+      "id": "web-37bd6653f5bb",
+      "title": "探索钟表世界:动口与动脑并行,助力知识掌握",
+      "thumbnail": "/api/oer/assets/web-37bd6653f5bb.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "钟表",
+        "整时"
+      ],
+      "width": 522,
+      "height": 500
+    },
+    {
+      "id": "web-93fab39fc0ff",
+      "title": "🕰️ 探索钟表世界:整点时间的奥秘",
+      "thumbnail": "/api/oer/assets/web-93fab39fc0ff.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "钟表",
+        "整时"
+      ],
+      "width": 500,
+      "height": 712
+    },
+    {
+      "id": "web-22f3333ee0d6",
+      "title": "钟表谜题:时分秒三针每天重合的次数是多少?",
+      "thumbnail": "/api/oer/assets/web-22f3333ee0d6.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "钟表",
+        "整时"
+      ],
+      "width": 514,
+      "height": 500
+    },
+    {
+      "id": "web-3a3429d55804",
+      "title": "一位69岁老头写的精短散文:《钟表》",
+      "thumbnail": "/api/oer/assets/web-3a3429d55804.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "钟表",
+        "整时"
+      ],
+      "width": 649,
+      "height": 500
+    },
+    {
+      "id": "web-973a41a01b22",
+      "title": "一年级下数学手抄报 认识人民币",
+      "thumbnail": "/api/oer/assets/web-973a41a01b22.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "人民币",
+        "一年级"
+      ],
+      "width": 667,
+      "height": 500
+    },
+    {
+      "id": "web-b6dc12cb7265",
+      "title": "一年级下册数学认识人民币专题详解",
+      "thumbnail": "/api/oer/assets/web-b6dc12cb7265.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "人民币",
+        "一年级"
+      ],
+      "width": 500,
+      "height": 707
+    },
+    {
+      "id": "web-dd4593c29031",
+      "title": "逃不掉的数学,小学一年级数学下册,关于人民币综合练习卷.",
+      "thumbnail": "/api/oer/assets/web-dd4593c29031.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "人民币",
+        "一年级"
+      ],
+      "width": 500,
+      "height": 752
+    },
+    {
+      "id": "web-dbfeeefe6853",
+      "title": "一年级下册数学认识人民币专项练习,人民币认识换算计算",
+      "thumbnail": "/api/oer/assets/web-dbfeeefe6853.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "人民币",
+        "一年级"
+      ],
+      "width": 800,
+      "height": 1131
+    },
+    {
+      "id": "web-85193f7c6c06",
+      "title": "福蛇迎春,\"数\" 彩飞扬——福州市洪塘中心小学寒假数学特色作业展示",
+      "thumbnail": "/api/oer/assets/web-85193f7c6c06.jpg",
+      "url": "https://wgw.weixiao100.com.cn",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "wgw.weixiao100.com.cn",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "统计图",
+        "小学"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-024bf135434c",
+      "title": "一周天气复式 条形统计图",
+      "thumbnail": "/api/oer/assets/web-024bf135434c.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "统计图",
+        "小学"
+      ],
+      "width": 500,
+      "height": 701
+    },
+    {
+      "id": "web-7022993f4ec0",
+      "title": "五年级年货统计表,统计图",
+      "thumbnail": "/api/oer/assets/web-7022993f4ec0.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "统计图",
+        "小学"
+      ],
+      "width": 500,
+      "height": 889
+    },
+    {
+      "id": "web-3a2ff1c3c08b",
+      "title": "五年级数学下册 折线统计图",
+      "thumbnail": "/api/oer/assets/web-3a2ff1c3c08b.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "统计图",
+        "小学"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-12998f64ce2c",
+      "title": "古诗配画《春晓》教程",
+      "thumbnail": "/api/oer/assets/web-12998f64ce2c.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "古诗",
+        "配图"
+      ],
+      "width": 725,
+      "height": 500
+    },
+    {
+      "id": "web-2d610c4c6efa",
+      "title": "今日,我便为大家带来我为杜牧的《山行》所做的原创配图插画,希望能将",
+      "thumbnail": "/api/oer/assets/web-2d610c4c6efa.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "古诗",
+        "配图"
+      ],
+      "width": 736,
+      "height": 1200
+    },
+    {
+      "id": "web-6d6ad7f80938",
+      "title": "📜 古诗:中国文化的瑰宝 🌸",
+      "thumbnail": "/api/oer/assets/web-6d6ad7f80938.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "古诗",
+        "配图"
+      ],
+      "width": 500,
+      "height": 560
+    },
+    {
+      "id": "web-e8be948c3321",
+      "title": "9首经典古诗配画,简单又美!",
+      "thumbnail": "/api/oer/assets/web-e8be948c3321.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "古诗",
+        "配图"
+      ],
+      "width": 500,
+      "height": 653
+    },
+    {
+      "id": "web-92befa38b032",
+      "title": "植物生长的奥秘 🌱 在这个不断变化的世界里,植物的生长过程无疑是",
+      "thumbnail": "/api/oer/assets/web-92befa38b032.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "植物",
+        "生长",
+        "过程"
+      ],
+      "width": 800,
+      "height": 1044
+    },
+    {
+      "id": "web-edae46042329",
+      "title": "植物的一生:从种子到果实🌱🍏",
+      "thumbnail": "/api/oer/assets/web-edae46042329.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "植物",
+        "生长",
+        "过程"
+      ],
+      "width": 800,
+      "height": 903
+    },
+    {
+      "id": "web-c83548adf7a6",
+      "title": "让我们一起动手,带孩子一起种植一些植物,观察它们的生长过程,并记录",
+      "thumbnail": "/api/oer/assets/web-c83548adf7a6.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "植物",
+        "生长",
+        "过程"
+      ],
+      "width": 800,
+      "height": 960
+    },
+    {
+      "id": "web-80fa066af747",
+      "title": "一年级植物生长过程简单绘画 - 抖音",
+      "thumbnail": "/api/oer/assets/web-80fa066af747.jpg",
+      "url": "https://www.douyin.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.douyin.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "植物",
+        "生长",
+        "过程"
+      ],
+      "width": 755,
+      "height": 1200
+    },
+    {
+      "id": "web-6b52d1356b46",
+      "title": "科学实验《虹吸现象》",
+      "thumbnail": "/api/oer/assets/web-6b52d1356b46.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "科学",
+        "实验",
+        "学生"
+      ],
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "id": "web-0932c57b4af1",
+      "title": "小学生实验出圈了!背后科学原理竟然这么 \"上头\"",
+      "thumbnail": "/api/oer/assets/web-0932c57b4af1.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "科学",
+        "实验",
+        "学生"
+      ],
+      "width": 548,
+      "height": 500
+    },
+    {
+      "id": "web-f376b711a31c",
+      "title": "张掖学子走进课堂,亲手做实验,探索科学奥秘",
+      "thumbnail": "/api/oer/assets/web-f376b711a31c.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "科学",
+        "实验",
+        "学生"
+      ],
+      "width": 1200,
+      "height": 741
+    },
+    {
+      "id": "web-e7e43f4ce64f",
+      "title": "戴彩丽(左二)在实验室与学生交流.",
+      "thumbnail": "/api/oer/assets/web-e7e43f4ce64f.jpg",
+      "url": "https://finance.sina.com.cn",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "finance.sina.com.cn",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "科学",
+        "实验",
+        "学生"
+      ],
+      "width": 730,
+      "height": 500
+    },
+    {
+      "id": "web-febaaba41170",
+      "title": "26个英文字母卡片",
+      "thumbnail": "/api/oer/assets/web-febaaba41170.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "英语",
+        "字母",
+        "卡片"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-25fe18331c5b",
+      "title": "🎨 26张色彩鲜艳的字母卡片,让孩子们在玩乐中学习英语字母!",
+      "thumbnail": "/api/oer/assets/web-25fe18331c5b.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "英语",
+        "字母",
+        "卡片"
+      ],
+      "width": 500,
+      "height": 685
+    },
+    {
+      "id": "web-950d7fc14656",
+      "title": "宝妈必看!萌趣字母闪卡,轻松开启英语启蒙",
+      "thumbnail": "/api/oer/assets/web-950d7fc14656.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "英语",
+        "字母",
+        "卡片"
+      ],
+      "width": 500,
+      "height": 653
+    },
+    {
+      "id": "web-3f316a58d6c4",
+      "title": "三年级英语26个字母卡片怎么做好看?",
+      "thumbnail": "/api/oer/assets/web-3f316a58d6c4.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "英语",
+        "字母",
+        "卡片"
+      ],
+      "width": 500,
+      "height": 666
+    },
+    {
+      "id": "web-4179486631c3",
+      "title": "济南育秀中学小学部五(3)中队安全教育主题升旗仪式_校园_安全小",
+      "thumbnail": "/api/oer/assets/web-4179486631c3.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "安全教育",
+        "校园"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-efc823c48694",
+      "title": "守护校园我能行——西安交通大学附属小学二年级组安全教育主题活动",
+      "thumbnail": "/api/oer/assets/web-efc823c48694.jpg",
+      "url": "https://mt.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mt.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "安全教育",
+        "校园"
+      ],
+      "width": 884,
+      "height": 500
+    },
+    {
+      "id": "web-0e3b5c49fcd4",
+      "title": "孩子们即将重返校园,这些安全教育知识,请让孩子牢记,提高安全意识.",
+      "thumbnail": "/api/oer/assets/web-0e3b5c49fcd4.jpg",
+      "url": "https://weibo.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "weibo.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "安全教育",
+        "校园"
+      ],
+      "width": 500,
+      "height": 500
+    },
+    {
+      "id": "web-34723a8ec961",
+      "title": "多维度安全教育课 筑牢学生\"身心陪护盾\"",
+      "thumbnail": "/api/oer/assets/web-34723a8ec961.jpg",
+      "url": "https://gmcj.hpe.cn",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "gmcj.hpe.cn",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "安全教育",
+        "校园"
+      ],
+      "width": 667,
+      "height": 500
+    },
+    {
+      "id": "web-af1fa6ed6a59",
+      "title": "超详细音乐节奏大集合",
+      "thumbnail": "/api/oer/assets/web-af1fa6ed6a59.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "音乐",
+        "节奏",
+        "图"
+      ],
+      "width": 800,
+      "height": 1068
+    },
+    {
+      "id": "web-3b7045f70bb6",
+      "title": "如何掌握音乐节奏:从基础到稳定的节奏感",
+      "thumbnail": "/api/oer/assets/web-3b7045f70bb6.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "音乐",
+        "节奏",
+        "图"
+      ],
+      "width": 644,
+      "height": 619
+    },
+    {
+      "id": "web-5d3c8536d459",
+      "title": "有节奏的音乐跳动",
+      "thumbnail": "/api/oer/assets/web-5d3c8536d459.jpg",
+      "url": "https://juejin.cn",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "juejin.cn",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "音乐",
+        "节奏",
+        "图"
+      ],
+      "width": 777,
+      "height": 338
+    },
+    {
+      "id": "web-ea76bc021f63",
+      "title": "音符在指尖跳跃,色彩在画布流淌 手绘音乐海报让每个节拍都看得见",
+      "thumbnail": "/api/oer/assets/web-ea76bc021f63.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "音乐",
+        "节奏",
+        "图"
+      ],
+      "width": 500,
+      "height": 885
+    },
+    {
+      "id": "web-c8efaa4f367f",
+      "title": "✨笔顺演示,田字格描红以及田字格书写强化练习💯共",
+      "thumbnail": "/api/oer/assets/web-c8efaa4f367f.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "汉字",
+        "书写",
+        "田字格"
+      ],
+      "width": 500,
+      "height": 709
+    },
+    {
+      "id": "web-fa189ea95e04",
+      "title": "一年级语文字帖上册(田字格版)",
+      "thumbnail": "/api/oer/assets/web-fa189ea95e04.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "汉字",
+        "书写",
+        "田字格"
+      ],
+      "width": 500,
+      "height": 709
+    },
+    {
+      "id": "web-e410bfb5112e",
+      "title": "崩溃无数次后,被老师一句话点醒了_孩子_字帖_田字格",
+      "thumbnail": "/api/oer/assets/web-e410bfb5112e.jpg",
+      "url": "https://learning.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "learning.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "汉字",
+        "书写",
+        "田字格"
+      ],
+      "width": 500,
+      "height": 659
+    },
+    {
+      "id": "web-a645888db6c4",
+      "title": "田字格生字练习",
+      "thumbnail": "/api/oer/assets/web-a645888db6c4.jpg",
+      "url": "https://www.xiaohongshu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.xiaohongshu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "汉字",
+        "书写",
+        "田字格"
+      ],
+      "width": 500,
+      "height": 667
+    },
+    {
+      "id": "web-968233f010e4",
+      "title": "三年级数学上册八单元分数的初步认识思维导图小学生数学手抄报",
+      "thumbnail": "/api/oer/assets/web-968233f010e4.jpg",
+      "url": "https://www.iqiyi.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.iqiyi.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数的初步认识",
+        "配图"
+      ],
+      "width": 867,
+      "height": 500
+    },
+    {
+      "id": "web-b4f3186e904e",
+      "title": "分数ppt模板,13页 675|数学课件分数的初步认识ppt模板 为大家分享一",
+      "thumbnail": "/api/oer/assets/web-b4f3186e904e.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数的初步认识",
+        "配图"
+      ],
+      "width": 500,
+      "height": 688
+    },
+    {
+      "id": "web-4759ab1eff5d",
+      "title": "手抄报——分数的初步认识",
+      "thumbnail": "/api/oer/assets/web-4759ab1eff5d.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数的初步认识",
+        "配图"
+      ],
+      "width": 1099,
+      "height": 800
+    },
+    {
+      "id": "web-67e170d90a24",
+      "title": "三年级上册数学分数的初步认识.",
+      "thumbnail": "/api/oer/assets/web-67e170d90a24.jpg",
+      "url": "https://m.douyin.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "m.douyin.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "分数的初步认识",
+        "配图"
+      ],
+      "width": 1049,
+      "height": 800
+    },
+    {
+      "id": "web-0fdcf5626f8a",
+      "title": "文章配图-2",
+      "thumbnail": "/api/oer/assets/web-0fdcf5626f8a.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "秋天的雨",
+        "配图"
+      ],
+      "width": 501,
+      "height": 500
+    },
+    {
+      "id": "web-8168ef1590fb",
+      "title": "秋天的雨,总是让人心生孤寂",
+      "thumbnail": "/api/oer/assets/web-8168ef1590fb.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "秋天的雨",
+        "配图"
+      ],
+      "width": 500,
+      "height": 653
+    },
+    {
+      "id": "web-cef2033fd949",
+      "title": "文章配图-1",
+      "thumbnail": "/api/oer/assets/web-cef2033fd949.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "秋天的雨",
+        "配图"
+      ],
+      "width": 500,
+      "height": 500
+    },
+    {
+      "id": "web-db2ae1cb7e6d",
+      "title": "小数的意义和性质思维导图",
+      "thumbnail": "/api/oer/assets/web-db2ae1cb7e6d.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数的意义",
+        "配图"
+      ],
+      "width": 685,
+      "height": 500
+    },
+    {
+      "id": "web-6b6d6fc09d19",
+      "title": "数学人教版「四下」小数的意义和性质手抄报",
+      "thumbnail": "/api/oer/assets/web-6b6d6fc09d19.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数的意义",
+        "配图"
+      ],
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "id": "web-ed75196b8a43",
+      "title": "小数的意义思维导图",
+      "thumbnail": "/api/oer/assets/web-ed75196b8a43.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数的意义",
+        "配图"
+      ],
+      "width": 689,
+      "height": 500
+    },
+    {
+      "id": "web-683b46aca6f8",
+      "title": "a2125小数的意义和性质",
+      "thumbnail": "/api/oer/assets/web-683b46aca6f8.jpg",
+      "url": "https://www.bilibili.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.bilibili.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "小数的意义",
+        "配图"
+      ],
+      "width": 889,
+      "height": 500
+    },
+    {
+      "id": "web-7b1c441483f2",
+      "title": "文章配图-50",
+      "thumbnail": "/api/oer/assets/web-7b1c441483f2.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "种子发芽实验",
+        "配图"
+      ],
+      "width": 628,
+      "height": 500
+    },
+    {
+      "id": "web-4f4f3d3858c5",
+      "title": "第三课 公民的基本权利和义务 【八年级下册《道德与法治》基础知识】",
+      "thumbnail": "/api/oer/assets/web-4f4f3d3858c5.jpg",
+      "url": "https://www.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "公民的基本权利",
+        "配图"
+      ],
+      "width": 509,
+      "height": 500
+    },
+    {
+      "id": "web-30900d7effeb",
+      "title": "公民的基本权利手抄报八年级",
+      "thumbnail": "/api/oer/assets/web-30900d7effeb.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "公民的基本权利",
+        "配图"
+      ],
+      "width": 667,
+      "height": 500
+    },
+    {
+      "id": "web-8d3ae782201a",
+      "title": "我们作为公民的基本权利有↓宪法规定了我们能做什么(权利),应该做",
+      "thumbnail": "/api/oer/assets/web-8d3ae782201a.jpg",
+      "url": "https://news.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "news.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "公民的基本权利",
+        "配图"
+      ],
+      "width": 607,
+      "height": 295
+    },
+    {
+      "id": "web-ff6cf8465273",
+      "title": "公民的基本权利和义务",
+      "thumbnail": "/api/oer/assets/web-ff6cf8465273.jpg",
+      "url": "https://www.bilibili.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.bilibili.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "公民的基本权利",
+        "配图"
+      ],
+      "width": 889,
+      "height": 500
+    },
+    {
+      "id": "web-2dec3b7397a4",
+      "title": "乘法口诀表表内乘法练习",
+      "thumbnail": "/api/oer/assets/web-2dec3b7397a4.jpg",
+      "url": "https://mt.sohu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mt.sohu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "表内乘法",
+        "配图"
+      ],
+      "width": 666,
+      "height": 500
+    },
+    {
+      "id": "web-8e10afe54070",
+      "title": "小学生数学手抄报,表内乘法手抄报,九九乘法表手抄报,九九乘法口诀表.",
+      "thumbnail": "/api/oer/assets/web-8e10afe54070.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "表内乘法",
+        "配图"
+      ],
+      "width": 661,
+      "height": 500
+    },
+    {
+      "id": "web-1abbe83ed7f5",
+      "title": "📚 表内乘法思维导图大揭秘 🧠",
+      "thumbnail": "/api/oer/assets/web-1abbe83ed7f5.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "表内乘法",
+        "配图"
+      ],
+      "width": 699,
+      "height": 500
+    },
+    {
+      "id": "web-2c22d7de8393",
+      "title": "二年级数学上册六单元,表内乘法二思维导图,小学生数学手抄报!",
+      "thumbnail": "/api/oer/assets/web-2c22d7de8393.jpg",
+      "url": "https://www.bilibili.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.bilibili.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "表内乘法",
+        "配图"
+      ],
+      "width": 888,
+      "height": 500
+    },
+    {
+      "id": "web-adca72a90e43",
+      "title": "少年闰土的纯真岁月",
+      "thumbnail": "/api/oer/assets/web-adca72a90e43.jpg",
+      "url": "https://quanmin.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "quanmin.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "少年闰土",
+        "配图"
+      ],
+      "width": 500,
+      "height": 897
+    },
+    {
+      "id": "web-e703896a5f0b",
+      "title": "📚鲁迅笔下少年闰土:跨越时空的友谊✨",
+      "thumbnail": "/api/oer/assets/web-e703896a5f0b.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "少年闰土",
+        "配图"
+      ],
+      "width": 755,
+      "height": 1200
+    },
+    {
+      "id": "web-e1e9a49fa507",
+      "title": "现实中\"少年闰土\"的结局如何?被鲁迅家辞退,穷困潦倒",
+      "thumbnail": "/api/oer/assets/web-e1e9a49fa507.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "少年闰土",
+        "配图"
+      ],
+      "width": 1040,
+      "height": 800
+    },
+    {
+      "id": "web-63e8a12159a0",
+      "title": "少年闰土,回顾小时候的课文",
+      "thumbnail": "/api/oer/assets/web-63e8a12159a0.jpg",
+      "url": "https://www.bilibili.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.bilibili.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "少年闰土",
+        "配图"
+      ],
+      "width": 800,
+      "height": 500
+    },
+    {
+      "id": "web-fd97e6276cde",
+      "title": "这次我为大家带来了一份关于\"数学平均分的奥秘\"的手抄报.",
+      "thumbnail": "/api/oer/assets/web-fd97e6276cde.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "平均分"
+      ],
+      "width": 500,
+      "height": 563
+    },
+    {
+      "id": "web-e331663230aa",
+      "title": "这次手抄报我选了\"探索数学平均分\"的主题,真的超有趣!",
+      "thumbnail": "/api/oer/assets/web-e331663230aa.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "平均分"
+      ],
+      "width": 500,
+      "height": 750
+    },
+    {
+      "id": "web-bcd4515edf42",
+      "title": "画的时候,我可是把平均分的各种小秘",
+      "thumbnail": "/api/oer/assets/web-bcd4515edf42.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "平均分"
+      ],
+      "width": 500,
+      "height": 750
+    },
+    {
+      "id": "web-3ebf37238988",
+      "title": "节日中秋红色系拍摄月饼",
+      "thumbnail": "/api/oer/assets/web-3ebf37238988.jpg",
+      "url": "https://90sheji.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "90sheji.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "月饼",
+        "红色"
+      ],
+      "width": 661,
+      "height": 441
+    },
+    {
+      "id": "web-d094438ee9e2",
+      "title": "喜庆中秋红色系拍摄月饼",
+      "thumbnail": "/api/oer/assets/web-d094438ee9e2.jpg",
+      "url": "https://90sheji.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "90sheji.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "月饼",
+        "红色"
+      ],
+      "width": 661,
+      "height": 441
+    },
+    {
+      "id": "web-067948d5c0b5",
+      "title": "数轴的三要素与绘制方法详解📐",
+      "thumbnail": "/api/oer/assets/web-067948d5c0b5.jpg",
+      "url": "https://mbd.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "mbd.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "数轴"
+      ],
+      "width": 500,
+      "height": 613
+    },
+    {
+      "id": "web-d9bc190c81d9",
+      "title": "分数里的红色记忆记三年级生活中的分数小报制作主题活动",
+      "thumbnail": "/api/oer/assets/web-d9bc190c81d9.jpg",
+      "url": "https://zhongshan.hpe.cn",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "zhongshan.hpe.cn",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "红色"
+      ],
+      "width": 666,
+      "height": 500
+    },
+    {
+      "id": "web-28066af356bf",
+      "title": "长方形平均分成10份的面积 - 抖音",
+      "thumbnail": "/api/oer/assets/web-28066af356bf.jpg",
+      "url": "https://www.douyin.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.douyin.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "长方形"
+      ],
+      "width": 513,
+      "height": 912
+    },
+    {
+      "id": "web-0e6bb7a97f12",
+      "title": "关注问题 ​ 写回答 登录/注册 文化 古诗词 摘抄 \"绿,帛青黄色 ..",
+      "thumbnail": "/api/oer/assets/web-0e6bb7a97f12.jpg",
+      "url": "https://www.zhihu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.zhihu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "黄色"
+      ],
+      "width": 500,
+      "height": 501
+    },
+    {
+      "id": "web-6b9f005977d5",
+      "title": "画一个圆形,表示分数乘法二分之一乘以二分之一",
+      "thumbnail": "/api/oer/assets/web-6b9f005977d5.jpg",
+      "url": "https://zhidao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "zhidao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "圆形"
+      ],
+      "width": 500,
+      "height": 558
+    },
+    {
+      "id": "web-4b8ebdb5f935",
+      "title": "六年级数学:通过长方形模型理解分数除法",
+      "thumbnail": "/api/oer/assets/web-4b8ebdb5f935.jpg",
+      "url": "https://baijiahao.baidu.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "baijiahao.baidu.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "长方形"
+      ],
+      "width": 981,
+      "height": 469
+    },
+    {
+      "id": "web-2d93046e4821",
+      "title": "三年级下册数学分数练习题涂色 - 抖音",
+      "thumbnail": "/api/oer/assets/web-2d93046e4821.jpg",
+      "url": "https://www.douyin.com",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "www.douyin.com",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "涂色"
+      ],
+      "width": 800,
+      "height": 1067
+    },
+    {
+      "id": "web-561a8367b894",
+      "title": "何佳功小学分数初步认知学习练习二三年级专项训练作业纸涂色练习本24",
+      "thumbnail": "/api/oer/assets/web-561a8367b894.jpg",
+      "url": "https://京东",
+      "license": "网络检索 · 版权见原页，仅课堂示意",
+      "creator": "京东",
+      "source": "百度图片（全网检索）",
+      "keywords": [
+        "涂色"
+      ],
+      "width": 500,
+      "height": 500
+    }
+  ]
+}
