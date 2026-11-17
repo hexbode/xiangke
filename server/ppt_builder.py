@@ -1850,6 +1850,11 @@ def _hint_fill(text: str) -> int:
         return max(1, min(8, _hint_int(match.group(1))))
     if re.search(r"[左右]半涂|涂[左右]半", text):
         return 1
+    # 「左半边涂红色」「涂出其中一半」这类口语化写法，默认涂 1 份
+    if re.search(r"涂[红黄绿蓝紫橙黑白]", text) or any(
+        word in text for word in ("涂色", "涂上", "涂成", "涂出")
+    ):
+        return 1
     return 0
 
 
@@ -2208,6 +2213,8 @@ def _draw_circle_figure(slide, figure: dict[str, Any], cx: float, cy: float, siz
             )
             connector.line.color.rgb = _rgb("green")
             connector.line.width = Pt(1.0)
+            if figure.get("fold"):
+                connector.line.dash_style = MSO_LINE.DASH
 
     # 外圈重描，压住扇区边缘的锯齿
     _add_shape(
@@ -3345,7 +3352,8 @@ def _render_lesson_flow(
     # 右侧：做一做 / 想一想
     _card(slide, x=6.74, y=1.62, w=2.66, h=0.98, shadow=True)
     label("做一做", 6.94, 1.74)
-    body(activity, 6.94, 2.0, 2.26, 0.5, 10.5)
+    activity_size = 10.5 if len(activity) <= 36 else 9.4 if len(activity) <= 56 else 8.6
+    body(activity, 6.94, 2.0, 2.26, 0.54, activity_size)
 
     _card(slide, x=6.74, y=2.72, w=2.66, h=0.88, shadow=True)
     _add_shape(
@@ -3786,7 +3794,17 @@ def _render_rich_page(
     elif kind in ("agenda", "teaching"):
         _render_agenda(slide, bullets)
     elif kind == "lesson":
-        if bullets:
+        hint_text = str(data.get("visual_hint") or "")
+        scene_text = " ".join(
+            [str((deck_meta or {}).get("lesson") or ""), str(data.get("title") or ""), hint_text]
+        )
+        # 有可画的配图要求时优先出图解；纯文字页（课时边界、时间安排）仍用卡片列表
+        drawable = (
+            bool(_parse_hint_figures(hint_text))
+            or any(_scene_flags(scene_text).values())
+            or any(word in hint_text for word in ("圆", "正方", "长方", "三角", "等分", "平均分", "涂", "折", "格"))
+        )
+        if bullets and not drawable:
             _render_card_list(slide, bullets, accent="green")
         else:
             picture = _render_lesson_flow(slide, data, deck_meta)

@@ -18,11 +18,31 @@ import os
 import re
 import urllib.error
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 DEFAULT_BASE_URL = "https://api.deepseek.com"
 DEFAULT_MODEL = "deepseek-chat"
 REQUEST_TIMEOUT = 60
+
+
+def _load_dotenv() -> None:
+    """读取项目根目录 .env（已在 .gitignore 中忽略），避免密钥写进代码或命令行。"""
+    env_path = Path(__file__).resolve().parent.parent / ".env"
+    if not env_path.exists():
+        return
+    for raw in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+_load_dotenv()
 
 ALLOWED_KINDS = {
     "cover",
@@ -102,16 +122,25 @@ _SYSTEM_PROMPT = """你是中国乡村小学的资深教研员，擅长把一节
 7. 每页 lesson 必须有 visualHint，写法二选一：
    - 几何：配图：正方形四等分，左上 1 格涂绿色，其余 3 格留白；下方写 1/4。
    - 场景：配图：秋天的雨，银杏树落叶，地面有积水。
-8. 面向乡村学校：默认无投影、无网络，教具只用纸、彩笔、课本等低成本材料；语言朴实、可操作。"""
+8. 面向乡村学校：默认无投影、无网络，教具只用纸、彩笔、课本等低成本材料；语言朴实、可操作。
+9. 如果用户给了「额外要求」，在不违反上述硬性要求的前提下优先满足；冲突时以上述要求为准。"""
 
 
-def _user_prompt(meta: dict[str, Any], brief: dict[str, Any], author: str, school: str) -> str:
+def _user_prompt(
+    meta: dict[str, Any],
+    brief: dict[str, Any],
+    author: str,
+    school: str,
+    requirement: str = "",
+) -> str:
     payload = {
         "课题信息": meta,
         "课时信息": brief,
         "授课教师": author or "乡课教师",
         "学校": school or "",
     }
+    if requirement:
+        payload["额外要求"] = requirement
     return "请为下面这节课生成课件 JSON：\n" + json.dumps(payload, ensure_ascii=False)
 
 
@@ -248,10 +277,28 @@ def _closing() -> dict[str, Any]:
     }
 
 
+def _balance_minutes(slides: list[dict[str, Any]], target: int) -> None:
+    """把各页 minutes 配平到课时总时长，避免模型算错加总。"""
+    timed = [slide for slide in slides if int(slide.get("minutes") or 0) > 0]
+    total = sum(int(slide.get("minutes") or 0) for slide in timed)
+    if not timed or total <= 0 or total == target:
+        return
+    for slide in timed:
+        slide["minutes"] = max(1, round(int(slide["minutes"]) * target / total))
+    # 四舍五入可能仍有 1-2 分钟误差，补到最长的一页上
+    for _ in range(20):
+        diff = target - sum(int(slide.get("minutes") or 0) for slide in timed)
+        if diff == 0:
+            break
+        longest = max(timed, key=lambda item: int(item.get("minutes") or 0))
+        longest["minutes"] = max(1, int(longest["minutes"]) + (1 if diff > 0 else -1))
+
+
 def _checks(deck: dict[str, Any]) -> list[dict[str, Any]]:
     slides = deck["slides"]
-    lessons = [slide for slide in slides if slide.get("kind") == "lesson"]
-    total_minutes = sum(int(slide.get("minutes") or 0) for slide in lessons)
+    lessons = [slide for slide in slides if slide.get("kind") in ("lesson", "practice")]
+    timed = [slide for slide in slides if int(slide.get("minutes") or 0) > 0]
+    total_minutes = sum(int(slide.get("minutes") or 0) for slide in timed)
     target = deck.get("brief", {}).get("minutes") or 40
     checks = [
         {"label": "页数 8-12 页", "ok": 8 <= len(slides) <= 12, "hint": f"当前 {len(slides)} 页"},
@@ -280,6 +327,7 @@ def generate_deck(
     brief: dict[str, Any],
     author: str = "",
     school: str = "",
+    requirement: str = "",
 ) -> dict[str, Any]:
     """调用 DeepSeek 生成并校验课件 deck。"""
     api_key, base_url, model = _config()
@@ -294,7 +342,7 @@ def generate_deck(
         "model": model,
         "messages": [
             {"role": "system", "content": _SYSTEM_PROMPT},
-            {"role": "user", "content": _user_prompt(meta, brief, author, school)},
+            {"role": "user", "content": _user_prompt(meta, brief, author, school, requirement)},
         ],
         "temperature": 0.6,
         "max_tokens": 4096,
@@ -325,6 +373,11 @@ def generate_deck(
     if slides[-1].get("kind") != "closing":
         slides.append(_closing())
     slides = slides[:14]
+    try:
+        target_minutes = int(brief.get("minutes") or 40)
+    except (TypeError, ValueError):
+        target_minutes = 40
+    _balance_minutes(slides, target_minutes)
 
     grade = _text(meta.get("grade"), 20)
     subject = _text(meta.get("subject"), 20)

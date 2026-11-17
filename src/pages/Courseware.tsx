@@ -33,7 +33,7 @@ const GEN_STEPS = [
   "分配环节时间：加总等于课时",
   "写每页字段：活动、提问、结论、备注",
   "自检课时、容量与答案",
-  "调用 DeepSeek 编排课件结构",
+  "按课件要求调用 DeepSeek 编排结构",
 ];
 
 const delay = (ms: number) => new Promise((resolve) => window.setTimeout(resolve, ms));
@@ -52,6 +52,7 @@ export function CoursewarePage() {
   const [courseType, setCourseType] = useState<PptCourseType>("new");
   const [level, setLevel] = useState<(typeof PPT_LEVEL_OPTIONS)[number]>("基础一般");
   const [aids, setAids] = useState<string[]>(["纸", "彩笔"]);
+  const [requirement, setRequirement] = useState("");
   const [periodError, setPeriodError] = useState(false);
   const [deck, setDeck] = useState<PptDeck | null>(null);
   const [generating, setGenerating] = useState(false);
@@ -150,6 +151,7 @@ export function CoursewarePage() {
         brief,
         author: state.teacher.name,
         school: state.teacher.school,
+        requirement: requirement.trim(),
       });
       usedAi = true;
     } catch (error) {
@@ -367,6 +369,25 @@ export function CoursewarePage() {
           </div>
           <div className="field-hint" style={{ marginTop: 8 }}>
             教具写进每页活动：折纸、涂色、对比都按现有材料设计。
+          </div>
+        </div>
+
+        <div className="form-block">
+          <div className="form-block-title">课件要求</div>
+          <textarea
+            className="textarea"
+            rows={3}
+            maxLength={300}
+            value={requirement}
+            placeholder="例如：多举生活例子；每页配一个动手活动；文字少一点，句子短一些；最后加一页课堂练习"
+            onChange={(event) => {
+              setRequirement(event.target.value);
+              setDeck(null);
+            }}
+            aria-label="课件生成要求"
+          />
+          <div className="field-hint" style={{ marginTop: 8 }}>
+            会随课题、课时一起交给 DeepSeek；不填则按默认课时结构生成。
           </div>
         </div>
 

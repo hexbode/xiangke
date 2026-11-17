@@ -7,6 +7,7 @@
 启动：python server/app.py  （默认 http://127.0.0.1:8001）
 接口：
   GET  /api/ppt/health   健康检查
+  POST /api/ppt/export-html  请求体 {"deck": {...}, "fileName": "xxx.html"}，返回单文件 HTML
   POST /api/ppt/export   请求体 {"deck": {...}, "fileName": "xxx.pptx"}，返回 pptx 二进制
 """
 
@@ -20,11 +21,12 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, quote, urlparse
 
 try:  # 兼容 python server/app.py 与 python -m server.app
-    from . import ai_deck
+    from . import ai_deck, html_deck
     from .ppt_builder import build_pptx, template_available
     from .oer import ASSET_DIR, hot_resources, pick_diagram, search_resources
 except ImportError:
     import ai_deck
+    import html_deck
     from ppt_builder import build_pptx, template_available
     from oer import ASSET_DIR, hot_resources, pick_diagram, search_resources
 
@@ -41,6 +43,15 @@ def _safe_filename(raw: str | None) -> str:
         name = name.replace(char, "-")
     if not name.lower().endswith(".pptx"):
         name = f"{name}.pptx"
+    return name[:120]
+
+
+def _safe_html_filename(raw: str | None) -> str:
+    name = (raw or "乡课-课件.html").strip() or "乡课-课件.html"
+    for char in '\\/:*?"<>|\r\n\t':
+        name = name.replace(char, "-")
+    if not name.lower().endswith(".html"):
+        name = f"{name}.html"
     return name[:120]
 
 
@@ -84,6 +95,7 @@ class PptHandler(BaseHTTPRequestHandler):
                     "endpoints": {
                         "/api/ppt/health": "GET",
                         "/api/ppt/export": "POST { deck, fileName }",
+                        "/api/ppt/export-html": "POST { deck, fileName }，返回 guizang 单文件 HTML",
                         "/api/ppt/generate": "POST { meta, brief, author, school }（DeepSeek）",
                         "/api/oer/health": "GET",
                         "/api/oer/hot": "GET ?limit=8",
@@ -195,6 +207,7 @@ class PptHandler(BaseHTTPRequestHandler):
                 "ok": True,
                 "engine": "python-pptx",
                 "template": template_available(),
+                "html_template": html_deck.template_available(),
                 "ai": ai_deck.available(),
                 "ai_model": ai_deck.model_name(),
             },
@@ -246,6 +259,7 @@ class PptHandler(BaseHTTPRequestHandler):
                 brief=brief,
                 author=str(payload.get("author") or ""),
                 school=str(payload.get("school") or ""),
+                requirement=str(payload.get("requirement") or "")[:300],
             )
         except ai_deck.AiDeckError as error:
             self._send_json(
@@ -271,10 +285,61 @@ class PptHandler(BaseHTTPRequestHandler):
             },
         )
 
+    def _handle_export_html(self) -> None:
+        """把 deck JSON 渲染为 guizang 风格单文件 HTML。"""
+        try:
+            length = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            length = 0
+        if length <= 0:
+            self._send_json(HTTPStatus.BAD_REQUEST, {"ok": False, "error": "empty_body"})
+            return
+        if length > MAX_BODY:
+            self._send_json(
+                HTTPStatus.REQUEST_ENTITY_TOO_LARGE,
+                {"ok": False, "error": "body_too_large"},
+            )
+            return
+        try:
+            payload = json.loads(self.rfile.read(length).decode("utf-8"))
+            deck = payload.get("deck", payload) if isinstance(payload, dict) else payload
+            page = html_deck.build_html(deck)
+            filename = _safe_html_filename(
+                payload.get("fileName") if isinstance(payload, dict) else None
+            )
+        except ValueError as error:
+            status = (
+                HTTPStatus.SERVICE_UNAVAILABLE
+                if str(error) == "html_template_missing"
+                else HTTPStatus.BAD_REQUEST
+            )
+            self._send_json(status, {"ok": False, "error": str(error)})
+            return
+        except Exception:  # noqa: BLE001 - 返回 500 并打印堆栈，便于排查
+            traceback.print_exc()
+            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"ok": False, "error": "build_failed"})
+            return
+
+        body = page.encode("utf-8")
+        self.send_response(HTTPStatus.OK)
+        for key, value in self._cors_headers().items():
+            self.send_header(key, value)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header(
+            "Content-Disposition",
+            f"attachment; filename=\"deck.html\"; filename*=UTF-8''{quote(filename)}",
+        )
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_POST(self) -> None:  # noqa: N802
         path = self.path.split("?")[0]
         if path == "/api/ppt/generate":
             self._handle_generate()
+            return
+        if path == "/api/ppt/export-html":
+            self._handle_export_html()
             return
         if path != "/api/ppt/export":
             self._send_json(
@@ -283,7 +348,7 @@ class PptHandler(BaseHTTPRequestHandler):
                     "ok": False,
                     "error": "not_found",
                     "path": self.path.split("?")[0],
-                    "hint": "导出接口为 POST /api/ppt/export，请求体 { deck, fileName }",
+                    "hint": "导出接口为 POST /api/ppt/export-html 或 /api/ppt/export，请求体 { deck, fileName }",
                 },
             )
             return
